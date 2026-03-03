@@ -1,0 +1,17 @@
+name: Deployment
+
+on:
+  workflow_dispatch:
+    inputs:
+      environment:
+        description: "Select environment"
+        type: environment
+        required: true
+
+jobs:
+  Deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Deploy
+        run: curl ${{ secrets.RENDER_DEPLOY_HOOK_URL }}
+      
