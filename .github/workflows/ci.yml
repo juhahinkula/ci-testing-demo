@@ -27,8 +27,8 @@ jobs:
 
   Deploy:
     needs: CI-workflow  
+    if: github.event_name == 'push' && github.ref == 'refs/heads/main'
     runs-on: ubuntu-latest
-    if: github.event_name == 'push' && github.ref == 'refs/head/main'
     steps:
       - name: Deploy
         run: curl ${{ secrets.RENDER_DEPLOY_HOOK_URL }}
