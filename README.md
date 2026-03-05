@@ -41,3 +41,19 @@ To manage the project, use the following npm commands:
   ```bash
   npm run lint
   ```
+
+## Docker
+
+Build the Docker image:
+
+```bash
+docker build -t ci-trainings:latest .
+```
+
+Run the container (map port 3000):
+
+```bash
+docker run --rm -p 3000:3000 ci-trainings:latest
+```
+
+You can set a custom port with `-e PORT=1234`.
