@@ -27,6 +27,6 @@ jobs:
         run: npm run test
       - name: Build
         run: npm run build
-      - name: Deploy
+      - name: Deploy test
         if: github.event_name == 'release'
         run: curl ${{ secrets.RENDER_DEPLOY_HOOK_URL }}
